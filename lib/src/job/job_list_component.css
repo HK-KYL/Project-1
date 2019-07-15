@@ -1,0 +1,17 @@
+.grid {
+    width: 99vw;
+    height: 75vh;
+    display: grid;
+    grid-template-columns: 30vw 50vw;
+    grid-column-gap: 5vw;
+    padding: 0;
+
+}
+.list {
+    height: 100%;
+    overflow: scroll;
+}
+ul {
+    height: 100%;
+    overflow: scroll;
+}

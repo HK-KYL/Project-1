@@ -1,0 +1,38 @@
+<div *ngIf="job != null && isNotLoading">
+    <button (click)="goBack()">Home</button>
+    
+    <p style="display: inline-block;">{{job.title}}</p>
+    <div><label>id: </label>{{job.id}}</div>
+    <div>
+        <label>title: </label>
+        <input [(ngModel)]="job.title" placeholder="title"/>
+        <br>
+        <label>createdBy: </label>
+        <input [(ngModel)]="job.createdBy" placeholder="createdBy"/>
+        <br>
+        <label>createdAt: </label>
+        <input [(ngModel)]="job.createdAt" placeholder="createdAt"/>
+        <br>
+        <label>startedAt: </label>
+        <input [(ngModel)]="job.startedAt" placeholder="startedAt"/>
+        <br>
+        <label>endedAt: </label>
+        <input [(ngModel)]="job.endedAt" placeholder="endedAt"/>
+        <br>
+        <label>description: </label>
+        <input [(ngModel)]="job.description" placeholder="description"/>
+        <br>
+        <label>status: </label>
+        <input [(ngModel)]="job.status" placeholder="status"/>
+        <br>
+        <label>reward: </label>
+        <input [(ngModel)]="job.reward" placeholder="reward"/>
+        <br>
+    </div>
+
+    <div *ngIf="isCreator()">
+        <button (click)="updateJob(job)">Update</button>
+        <button (click)="deleteJob(job.id)">Delete</button>
+    </div>
+    
+</div>

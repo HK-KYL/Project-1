@@ -1,0 +1,22 @@
+<div class="grid">
+    <div class="list">
+        <p style="position: -webkit-sticky; /* Safari */
+                    position: sticky;
+                    top: 0;">Job Center</p>
+
+        <button [routerLink]="JobRoutePaths.form.toUrl()">New</button>
+        
+        <ul class="items">
+            <li *ngFor="let job of jobs"
+                [class.selected]="job.id === selected"
+                (click)="onSelect(job)">
+                <span class="badge">{{job.id}}</span>
+                {{job.title}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <router-outlet [routes]="JobRoutes.all"></router-outlet>
+    </div>
+</div>
